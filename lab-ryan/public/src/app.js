@@ -1,6 +1,9 @@
 import React, {Component, Fragment} from 'react';
 import ReactDOM from 'react-dom';
 import io from 'socket.io-client';
+import MessageEntry from './msgEntry.js';
+import MessageDisplay from './msgDisplay.js';
+
 
 const socket = io('http://localhost:3000');
 socket.on('connect', () => {
@@ -9,22 +12,21 @@ socket.on('connect', () => {
 
 class App extends Component {
     state = {
-        messages: []
+        msgs: []
     }
 
     componentDidMount() {
-        socket.on('messages', (data) => {
-            console.log('client messages', data);
-            this.setState({messages: data.messages});
-            console.log('state of messages after compount mount', this.state)
+        socket.on('msgs', (data) => {
+            console.log('client msgs', data);
+            this.setState({msgs: data.msgs});
+            console.log(this.state)
         })
     }
 
     sendMessage = (event) => {
         event.preventDefault();
-        if(event.target.message.value){
-            socket.emit('send-message', event.target.message.value);
-
+        if(event.target.msg.value){
+            socket.emit('send-msg', event.target.msg.value);
         }
         event.target.reset();
     };
@@ -34,16 +36,16 @@ class App extends Component {
             <h1>Socket IO App</h1>
             <p>Welcome to Our App</p>
             <ul>
-                {this.state.messages.map((message, index) => {
-                    return <li key={index}>{message}</li>
+                {this.state.msgs.map((msg, index) => {
+                    return <li key={index}>{msg}</li>
                 })}
             </ul>
-
-            <form onSubmit={this.sendMessage} name="form">
-                <input size="50" name="message" placeholder="Message..." />
+            {/* <form onSubmit={this.sendMSG} name="form">
+                <input name="msg" placeholder="Message..." />
                 <input type="submit" value="Send Message" />
-
-            </form>
+            </form> */}
+            <MessageEntry />
+            <MessageDisplay />
         </Fragment>
     }
 }
