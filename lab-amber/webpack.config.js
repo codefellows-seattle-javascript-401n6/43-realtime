@@ -5,7 +5,7 @@ const HtmlPlugin = require('html-webpack-plugin');
 const config = {
   mode: 'development',
   devtool: 'source-map',
-  entry: `${__dirname}/src/app.jsx`,
+  entry: `${__dirname}/src/main.js`,
   output: {
     path: `${__dirname}/public`,
     filename: 'bundle.js'
