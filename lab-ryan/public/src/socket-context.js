@@ -1,5 +1,5 @@
 import io from 'socket.io-client';
-console.log('io is running');
+console.log('io running');
 
 const socket = io('http://localhost:3000');
 socket.on('connect', () => {

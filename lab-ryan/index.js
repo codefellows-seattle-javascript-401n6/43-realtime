@@ -1,24 +1,29 @@
-let app = require('express');
-let http = require('http').Server(app);
-let io = require('socket.io')('http');
+const express = require('express');
+const app = express();
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
 
-let allChats = [];
+let clicks = 0;
 
-io.on('connect', socket => {
+io.on('connection', socket => {
   console.log('connected', socket.id);
-  console.log('sending stuff', allChats);
-  io.emit('chat-info', {chat});
+  console.log('sending initial click info', clicks);
+  io.emit('click-info', {clicks});
 
-  socket.on('chatting', () => {
-    console.log('got chat');
-    chat++;
-    console.log('broadcasting chats', allChats);
-    io.emit('chat-info', {allChats});
+  socket.on('send-click', () => {
+    console.log('got "send-click event"');
+    clicks++;
+    console.log('broadcasting click', clicks);
+    io.emit('click-info', {clicks});
+
+    setInterval(() => {
+      socket.emit('receive-tick', {currentTime: Date.now().toString()});
+    }, 1000);
   });
 });
 
 const Bundler = require('parcel-bundler');
-let bundler = new Bundler('./public/index.html');
+const bundler = new Bundler('./public/index.html');
 app.use(bundler.middleware());
 
 const PORT = process.env.PORT || 3000;
