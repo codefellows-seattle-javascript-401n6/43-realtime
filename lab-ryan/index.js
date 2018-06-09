@@ -3,34 +3,26 @@ const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
-let MSGS = ['test'];
+let MESSAGES = [];
 
-io.on('connection', socket => {
-  console.log('connection', socket.id);
+io.on('connection', function(socket){
+  socket.emit('msgs', {msgs: MESSAGES});
 
-  
-  socket.on('send-message', (msg) => {
-    console.log('receved message', msg);
-    io.emit('msg-info', (msg));
+  socket.on('send-msg', (msg) => {
+    console.log('msg received')
+    if(MESSAGES.length === 15){
+      MESSAGES.push(msg)
+      MESSAGES.shift()
+    }else{
+    MESSAGES.push(msg);
+    }
+    io.emit('msgs', {msgs: MESSAGES});
   });
 });
-  
-// io.on('connection', socket => {
-//   socket.emit('msgs', {msgs: MSGS});
 
-//   socket.on('send-msg', (msg) => {
-//     console.log('msg recieved', msg);
-//     if(MSGS.length === 10){
-//       MSGS.push(msg);
-//       MSGS.shift();
-//     } else {
-//       io.emit('msgs', {msgs: MSGS});
-//     };
-//   });
-// });
 
 const Bundler = require('parcel-bundler');
-const bundler = new Bundler('./public/index.html');
+let bundler = new Bundler('./public/index.html');
 app.use(bundler.middleware());
 
 const PORT = process.env.PORT || 3000;
