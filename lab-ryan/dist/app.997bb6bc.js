@@ -435,7 +435,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 }
 
 module.exports = checkPropTypes;
-},{"fbjs/lib/invariant":15,"fbjs/lib/warning":17,"./lib/ReactPropTypesSecret":41}],7:[function(require,module,exports) {
+},{"fbjs/lib/invariant":15,"fbjs/lib/warning":17,"./lib/ReactPropTypesSecret":41}],6:[function(require,module,exports) {
 /** @license React v16.4.0
  * react.development.js
  *
@@ -1912,7 +1912,7 @@ if (undefined === 'production') {
 } else {
   module.exports = require('./cjs/react.development.js');
 }
-},{"./cjs/react.development.js":7}],20:[function(require,module,exports) {
+},{"./cjs/react.development.js":6}],20:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2269,7 +2269,7 @@ function camelizeStyleName(string) {
 }
 
 module.exports = camelizeStyleName;
-},{"./camelize":44}],6:[function(require,module,exports) {
+},{"./camelize":44}],7:[function(require,module,exports) {
 /** @license React v16.4.0
  * react-dom.development.js
  *
@@ -19587,7 +19587,7 @@ if (undefined === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":6}],32:[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":7}],31:[function(require,module,exports) {
 /**
  * Parses an URI
  *
@@ -20009,7 +20009,7 @@ function coerce(val) {
   return val;
 }
 
-},{"ms":50}],31:[function(require,module,exports) {
+},{"ms":50}],35:[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {};
@@ -20370,7 +20370,7 @@ function localstorage() {
     return window.localStorage;
   } catch (e) {}
 }
-},{"./debug":28,"process":31}],8:[function(require,module,exports) {
+},{"./debug":28,"process":35}],8:[function(require,module,exports) {
 var global = arguments[3];
 
 /**
@@ -20448,7 +20448,7 @@ function url (uri, loc) {
   return obj;
 }
 
-},{"parseuri":32,"debug":11}],47:[function(require,module,exports) {
+},{"parseuri":31,"debug":11}],47:[function(require,module,exports) {
 
 /**
  * This is the common logic for both the Node.js and web browser
@@ -20675,7 +20675,7 @@ function coerce(val) {
   return val;
 }
 
-},{"ms":50}],40:[function(require,module,exports) {
+},{"ms":50}],39:[function(require,module,exports) {
 var process = require("process");
 /**
  * This is the web browser implementation of `debug()`.
@@ -20849,7 +20849,7 @@ function localstorage() {
     return window.localStorage;
   } catch (e) {}
 }
-},{"./debug":47,"process":31}],29:[function(require,module,exports) {
+},{"./debug":47,"process":35}],30:[function(require,module,exports) {
 
 /**
  * Expose `Emitter`.
@@ -21014,7 +21014,7 @@ Emitter.prototype.hasListeners = function(event){
   return !! this.listeners(event).length;
 };
 
-},{}],39:[function(require,module,exports) {
+},{}],40:[function(require,module,exports) {
 var toString = {}.toString;
 
 module.exports = Array.isArray || function (arr) {
@@ -21192,7 +21192,7 @@ exports.removeBlobs = function(data, callback) {
   }
 };
 
-},{"isarray":39,"./is-buffer":27}],12:[function(require,module,exports) {
+},{"isarray":40,"./is-buffer":27}],12:[function(require,module,exports) {
 
 /**
  * Module dependencies.
@@ -21611,7 +21611,7 @@ function error(msg) {
   };
 }
 
-},{"debug":40,"component-emitter":29,"./binary":26,"isarray":39,"./is-buffer":27}],70:[function(require,module,exports) {
+},{"debug":39,"component-emitter":30,"./binary":26,"isarray":40,"./is-buffer":27}],70:[function(require,module,exports) {
 
 /**
  * Module exports.
@@ -21698,7 +21698,7 @@ module.exports = Array.isArray || function (arr) {
   return toString.call(arr) == '[object Array]';
 };
 
-},{}],58:[function(require,module,exports) {
+},{}],57:[function(require,module,exports) {
 'use strict'
 
 exports.byteLength = byteLength
@@ -21851,7 +21851,7 @@ function fromByteArray (uint8) {
   return parts.join('')
 }
 
-},{}],57:[function(require,module,exports) {
+},{}],58:[function(require,module,exports) {
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
   var eLen = (nBytes * 8) - mLen - 1
@@ -23737,7 +23737,7 @@ function isnan (val) {
   return val !== val // eslint-disable-line no-self-compare
 }
 
-},{"base64-js":58,"ieee754":57,"isarray":59,"buffer":46}],36:[function(require,module,exports) {
+},{"base64-js":57,"ieee754":58,"isarray":59,"buffer":46}],38:[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 /* global Blob File */
 
@@ -24907,7 +24907,7 @@ exports.decodePayloadAsBinary = function (data, binaryType, callback) {
   });
 };
 
-},{"./keys":55,"has-binary2":36,"arraybuffer.slice":60,"after":61,"./utf8":56,"base64-arraybuffer":62,"blob":63}],52:[function(require,module,exports) {
+},{"./keys":55,"has-binary2":38,"arraybuffer.slice":60,"after":61,"./utf8":56,"base64-arraybuffer":62,"blob":63}],52:[function(require,module,exports) {
 /**
  * Module dependencies.
  */
@@ -25066,7 +25066,7 @@ Transport.prototype.onClose = function () {
   this.emit('close');
 };
 
-},{"engine.io-parser":49,"component-emitter":29}],35:[function(require,module,exports) {
+},{"engine.io-parser":49,"component-emitter":30}],37:[function(require,module,exports) {
 /**
  * Compiles a querystring
  * Returns string representation of the object
@@ -25105,7 +25105,7 @@ exports.decode = function(qs){
   return qry;
 };
 
-},{}],71:[function(require,module,exports) {
+},{}],73:[function(require,module,exports) {
 
 module.exports = function(a, b){
   var fn = function(){};
@@ -25113,7 +25113,7 @@ module.exports = function(a, b){
   a.prototype = new fn;
   a.prototype.constructor = a;
 };
-},{}],73:[function(require,module,exports) {
+},{}],72:[function(require,module,exports) {
 'use strict';
 
 var alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_'.split('')
@@ -25584,7 +25584,7 @@ function localstorage() {
     return window.localStorage;
   } catch (e) {}
 }
-},{"./debug":68,"process":31}],69:[function(require,module,exports) {
+},{"./debug":68,"process":35}],69:[function(require,module,exports) {
 /**
  * Module dependencies.
  */
@@ -25831,7 +25831,7 @@ Polling.prototype.uri = function () {
   return schema + '://' + (ipv6 ? '[' + this.hostname + ']' : this.hostname) + port + this.path + query;
 };
 
-},{"../transport":52,"parseqs":35,"engine.io-parser":49,"component-inherit":71,"yeast":73,"debug":54,"xmlhttprequest-ssl":64}],65:[function(require,module,exports) {
+},{"../transport":52,"parseqs":37,"engine.io-parser":49,"component-inherit":73,"yeast":72,"debug":54,"xmlhttprequest-ssl":64}],65:[function(require,module,exports) {
 var global = arguments[3];
 /**
  * Module requirements.
@@ -26246,7 +26246,7 @@ function unloadHandler () {
   }
 }
 
-},{"xmlhttprequest-ssl":64,"./polling":69,"component-emitter":29,"component-inherit":71,"debug":54}],66:[function(require,module,exports) {
+},{"xmlhttprequest-ssl":64,"./polling":69,"component-emitter":30,"component-inherit":73,"debug":54}],66:[function(require,module,exports) {
 var global = arguments[3];
 
 /**
@@ -26480,7 +26480,7 @@ JSONPPolling.prototype.doWrite = function (data, fn) {
   }
 };
 
-},{"./polling":69,"component-inherit":71}],72:[function(require,module,exports) {
+},{"./polling":69,"component-inherit":73}],71:[function(require,module,exports) {
 
 },{}],67:[function(require,module,exports) {
 var global = arguments[3];
@@ -26771,7 +26771,7 @@ WS.prototype.check = function () {
   return !!WebSocket && !('__initialize' in WebSocket && this.name === WS.prototype.name);
 };
 
-},{"../transport":52,"engine.io-parser":49,"parseqs":35,"component-inherit":71,"yeast":73,"debug":54,"ws":72}],53:[function(require,module,exports) {
+},{"../transport":52,"engine.io-parser":49,"parseqs":37,"component-inherit":73,"yeast":72,"debug":54,"ws":71}],53:[function(require,module,exports) {
 var global = arguments[3];
 /**
  * Module dependencies
@@ -26827,7 +26827,7 @@ function polling (opts) {
   }
 }
 
-},{"xmlhttprequest-ssl":64,"./polling-xhr":65,"./polling-jsonp":66,"./websocket":67}],37:[function(require,module,exports) {
+},{"xmlhttprequest-ssl":64,"./polling-xhr":65,"./polling-jsonp":66,"./websocket":67}],33:[function(require,module,exports) {
 
 var indexOf = [].indexOf;
 
@@ -27584,7 +27584,7 @@ Socket.prototype.filterUpgrades = function (upgrades) {
   return filteredUpgrades;
 };
 
-},{"./transports/index":53,"component-emitter":29,"debug":54,"indexof":37,"engine.io-parser":49,"parseuri":32,"parseqs":35,"./transport":52}],30:[function(require,module,exports) {
+},{"./transports/index":53,"component-emitter":30,"debug":54,"indexof":33,"engine.io-parser":49,"parseuri":31,"parseqs":37,"./transport":52}],29:[function(require,module,exports) {
 
 module.exports = require('./socket');
 
@@ -27596,7 +27596,7 @@ module.exports = require('./socket');
  */
 module.exports.parser = require('engine.io-parser');
 
-},{"./socket":45,"engine.io-parser":49}],33:[function(require,module,exports) {
+},{"./socket":45,"engine.io-parser":49}],36:[function(require,module,exports) {
 module.exports = toArray
 
 function toArray(list, index) {
@@ -27637,7 +27637,7 @@ function on (obj, ev, fn) {
   };
 }
 
-},{}],34:[function(require,module,exports) {
+},{}],32:[function(require,module,exports) {
 /**
  * Slice reference.
  */
@@ -28102,7 +28102,7 @@ Socket.prototype.binary = function (binary) {
   return this;
 };
 
-},{"socket.io-parser":12,"component-emitter":29,"to-array":33,"./on":13,"component-bind":34,"debug":11,"parseqs":35,"has-binary2":36}],38:[function(require,module,exports) {
+},{"socket.io-parser":12,"component-emitter":30,"to-array":36,"./on":13,"component-bind":32,"debug":11,"parseqs":37,"has-binary2":38}],34:[function(require,module,exports) {
 
 /**
  * Expose `Backoff`.
@@ -28764,7 +28764,7 @@ Manager.prototype.onreconnect = function () {
   this.emitAll('reconnect', attempt);
 };
 
-},{"engine.io-client":30,"./socket":10,"component-emitter":29,"socket.io-parser":12,"./on":13,"component-bind":34,"debug":11,"indexof":37,"backo2":38}],5:[function(require,module,exports) {
+},{"engine.io-client":29,"./socket":10,"component-emitter":30,"socket.io-parser":12,"./on":13,"component-bind":32,"debug":11,"indexof":33,"backo2":34}],5:[function(require,module,exports) {
 
 /**
  * Module dependencies.
@@ -28885,9 +28885,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// import Chatter from './Chatter';
-// import ChatDisplay from './ChatDisplay';
-
 var socket = (0, _socket2.default)('http://localhost:3000');
 socket.on('connect', function () {
     console.log('client connected');
@@ -28907,9 +28904,14 @@ var App = function (_Component) {
             args[_key] = arguments[_key];
         }
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = App.__proto__ || Object.getPrototypeOf(App)).call.apply(_ref, [this].concat(args))), _this), _this.state = { currentTime: Date.now().toString() }, _this.sendClick = function () {
-            console.log('client clicked', socket.id);
-            socket.emit('send-click');
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = App.__proto__ || Object.getPrototypeOf(App)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+            messages: []
+        }, _this.sendMessage = function (event) {
+            event.preventDefault();
+            if (event.target.message.value) {
+                socket.emit('send-message', event.target.message.value);
+            }
+            event.target.reset();
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
@@ -28918,9 +28920,10 @@ var App = function (_Component) {
         value: function componentDidMount() {
             var _this2 = this;
 
-            socket.on('tick', function (data) {
-                console.log('client tick', data);
-                _this2.setState({ currentTime: data.currentTime });
+            socket.on('messages', function (data) {
+                console.log('client messages', data);
+                _this2.setState({ messages: data.messages });
+                console.log('state of messages after compount mount', _this2.state);
             });
         }
     }, {
@@ -28940,19 +28943,21 @@ var App = function (_Component) {
                     'Welcome to Our App'
                 ),
                 _react2.default.createElement(
-                    'p',
+                    'ul',
                     null,
-                    _react2.default.createElement(
-                        'button',
-                        { onClick: this.sendClick },
-                        'Click'
-                    )
+                    this.state.messages.map(function (message, index) {
+                        return _react2.default.createElement(
+                            'li',
+                            { key: index },
+                            message
+                        );
+                    })
                 ),
                 _react2.default.createElement(
-                    'p',
-                    null,
-                    'Current Time: ',
-                    this.state.currentTime
+                    'form',
+                    { onSubmit: this.sendMessage, name: 'form' },
+                    _react2.default.createElement('input', { size: '50', name: 'message', placeholder: 'Message...' }),
+                    _react2.default.createElement('input', { type: 'submit', value: 'Send Message' })
                 )
             );
         }
@@ -28992,7 +28997,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '57895' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '53933' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

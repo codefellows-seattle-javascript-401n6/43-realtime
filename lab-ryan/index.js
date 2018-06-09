@@ -3,22 +3,19 @@ const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
-let clicks = 0;
+let MSGS = [];
 
 io.on('connection', socket => {
-  console.log('connected', socket.id);
-  console.log('sending initial click info', clicks);
-  io.emit('click-info', {clicks});
+  socket.emit('messages', {messages: MSGS});
 
-  socket.on('send-click', () => {
-    console.log('got "send-click event"');
-    clicks++;
-    console.log('broadcasting click', clicks);
-    io.emit('click-info', {clicks});
-
-    setInterval(() => {
-      socket.emit('receive-tick', {currentTime: Date.now().toString()});
-    }, 1000);
+  socket.on('send-message', (message) => {
+    console.log('message recieved');
+    if(MSGS.length === 10){
+      MSGS.push(message);
+      MSGS.shift();
+    } else {
+      io.emit('messages', {messages: MSGS});
+    };
   });
 });
 
