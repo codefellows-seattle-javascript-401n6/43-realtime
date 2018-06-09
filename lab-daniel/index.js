@@ -6,13 +6,12 @@ const PORT = process.env.PORT || 3000;
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
-app.get('/', (req, res) => {
-    res.send('YOOOOO')
-})
 
 
+const Bundler = require('parcel-bundler');
+let bundler = new Bundler('./public/index.html');
+app.use(bundler.middleware());
 
-
-app.listen(PORT, () => {
+http.listen(PORT, () => {
     console.log(`http://localhost:${PORT}`)
 })
