@@ -11,7 +11,12 @@ io.on('connection', function(socket){
 
   socket.on('send-msg', (msg) => {
     console.log('msg received')
+    if(MSGS.length === 10){
+      MSGS.push(msg)
+      MSGS.shift()
+    }else{
     MSGS.push(msg);
+    }
     io.emit('msgs', {msgs: MSGS});
   });
 });

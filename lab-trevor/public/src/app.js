@@ -36,16 +36,18 @@ class App extends Component {
   render() {
     return <Fragment>
       <h1>My socket app</h1>
-      <form onSubmit={this.sendMSG} name="form">
-        <input size="50" name="msg" placeholder="Message..."/>
-        <input type="submit" value="Send Message" />
-      </form>
+      
       <ul>
         {this.state.msgs.map((msg, index) => {
           return <li key={index}>{msg}</li>
         })}
 
       </ul>
+
+      <form onSubmit={this.sendMSG} name="form">
+        <input size="50" name="msg" placeholder="Message..."/>
+        <input type="submit" value="Send Message" />
+      </form>
     </Fragment>
   }
 }
