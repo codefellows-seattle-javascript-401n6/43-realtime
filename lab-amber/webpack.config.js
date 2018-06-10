@@ -5,6 +5,9 @@ const HtmlPlugin = require('html-webpack-plugin');
 const config = {
   mode: 'development',
   devtool: 'source-map',
+  devServer: {
+    headers: {'Access-Control-Allow-Origin': '*'}
+  },
   entry: `${__dirname}/src/main.js`,
   output: {
     path: `${__dirname}/public`,
