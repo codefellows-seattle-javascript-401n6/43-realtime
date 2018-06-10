@@ -11,13 +11,20 @@ class MessageForm extends React.Component {
     super(props);
 
     this.state = {
-      userId: sessionStorage.getItem('userInfo').socketId,
-      userName: sessionStorage.getItem('userInfo').userName,
+      userId: '',
+      userName: '',
       message: ''
     }
 
     this.handleMessageChange = this.handleMessageChange.bind(this);
     this.handleMessageSubmit = this.handleMessageSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({
+      userId: sessionStorage.getItem('userId').socketId,
+      userName: sessionStorage.getItem('userName')
+    });
   }
 
   handleMessageChange(event) {
@@ -29,8 +36,6 @@ class MessageForm extends React.Component {
 
   handleMessageSubmit(event) {
     event.preventDefault();
-    console.log('message post func', messagePost);
-    console.log('props', this.props)
     this.props.messagePost(this.state);
   }
 

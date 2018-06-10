@@ -18,7 +18,6 @@ class HomePage extends React.Component {
 
   componentDidMount() {
     socket.on('message-info',  messages => {
-      console.log('messages in the front end connection', messages);
       this.props.messageInflate(messages);
     });
     
@@ -29,7 +28,7 @@ class HomePage extends React.Component {
 
   render() {
     return <React.Fragment>
-      <p>Hello World!</p>
+      <h1>Post a new message on this message board:</h1>
       <MessageForm />
       <MessageList />
     </React.Fragment>
