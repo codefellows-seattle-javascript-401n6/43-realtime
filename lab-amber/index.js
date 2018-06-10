@@ -20,19 +20,10 @@ let corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use('/api', MessageRouter);
-
-// io.on('connection', socket => {
-//   console.log('1. connected:', socket.id);
-//   fetch(`http://localhost:${PORT}/api/weather`)
-//   .then(messages => {
-//     console.log('2. server fetch initial', messages);
-//     io.emit('message-info', messages);
-//   });
-// });
 
 app.use(express.static('./public'));
 
@@ -50,11 +41,26 @@ io.on('connection', socket => {
   console.log('1. connected:', socket.id);
 
   Message.find({})
-  .then(messages => {
-    console.log('1. get messages', messages);
-    messages.reverse();
-    io.emit('message-info', messages);
-  }).catch(err => {
-    console.error(err);
+    .then(messages => {
+      console.log('1. get messages', messages);
+      messages.reverse();
+      io.emit('message-info', messages);
+    }).catch(err => {
+      console.error(err);
+    });
+
+  socket.on('message-post', message => {
+    Message.create(message)
+      .then(() => {
+        return Message.find({});
+      })
+      .then(messages => {
+        console.log('messages from message post emit', messages);
+        messages.reverse();
+        io.emit('message-refresh', messages);
+      }).catch(err => {
+        console.error(err);
+      });
   });
+
 });
