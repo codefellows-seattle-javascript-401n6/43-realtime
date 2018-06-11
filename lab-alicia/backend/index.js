@@ -3,22 +3,15 @@ const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
-let clicks = 0;
+let chats = [];
 
 io.on('connection', socket => {
   console.log('connected', socket.id);
-  console.log('sending initial click info', clicks);
-  io.emit('click-info', {clicks});
-
-  socket.on('send-click', () => {
-    console.log('got "send-click event"');
-    clicks++;
-    console.log('broadcasting click', clicks);
-    io.emit('click-info', {clicks});
-
-    setInterval(() => {
-      socket.emit('receive-tick', {currentTime: Date.now().toString()});
-    }, 1000);
+  
+  socket.on('send-msg', (msg) => {
+    console.log('received msg', msg);
+    chats.push({msg});
+    io.emit('received-msg', msg);
   });
 });
 
