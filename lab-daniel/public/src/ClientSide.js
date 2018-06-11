@@ -1,44 +1,36 @@
 import React from 'react';
+import io from 'socket.io-client'
 
+const socket = io('http://localhost:3000');
+socket.on('connect', () => {
+    console.log('A client has been connected!');
+});
 
 class ClientSide extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            username: '',
-            message: '',
+        state = {
             totalMessages: []
         }
-        this.handleName = this.handleName.bind(this);
-        this.handleMessage = this.handleMessage.bind(this);
 
+    componentDidUpdate(){
+        console.log('Message id: ', socket.id);
+        socket.on('totalMessages', (data) => {
+            this.setState({totalMessages: data.totalMessages});
+            console.log('State: ', this.state)
+        })
     }
 
-    handleName(ev){
-        ev.preventDefault();
-        let setUsername = ev.target.value;
-        this.setState({username: setUsername});
-        console.log(setUsername);
+    sendMessage = (e) => {
+        e.preventDefault();
+        console.log('in sendMessage');
+        socket.emit('send-message', e.target.value);
     }
 
-    handleMessage(ev){
-        ev.preventDefault();
-        let setMessage = ev.target.value;
-        this.setState({message: setMessage});
-        console.log(setMessage);
-    }
-
-    handleSubmit(ev){
-        ev.preventDefault();
-
-    }
     render() {
         return <React.Fragment>
             <form type="submit">
-                <h4>Pick a username and chat away!</h4>
-                <input onChange={this.handleName} type="text" placeholder="Username"></input>
-                <input onChange={this.handleMessage} type="text" placeholder="Message..."></input>
-                <button onClick={this.handleSubmit} type="submit">SEND</button>
+                <h4>Write a message and chat away!</h4>
+                <input  type="text" placeholder="Message..."></input>
+                <button onClick={this.sendMessage}  type="submit">SEND</button>
             </form>
 
             <div className="messages">
