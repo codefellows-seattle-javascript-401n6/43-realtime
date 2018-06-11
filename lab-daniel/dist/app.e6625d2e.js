@@ -98,7 +98,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({45:[function(require,module,exports) {
+})({44:[function(require,module,exports) {
 /*
 object-assign
 (c) Sindre Sorhus
@@ -189,7 +189,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 	return to;
 };
-},{}],46:[function(require,module,exports) {
+},{}],45:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -243,7 +243,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 }
 
 module.exports = invariant;
-},{}],47:[function(require,module,exports) {
+},{}],46:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -261,7 +261,7 @@ if (undefined !== 'production') {
 }
 
 module.exports = emptyObject;
-},{}],49:[function(require,module,exports) {
+},{}],48:[function(require,module,exports) {
 "use strict";
 
 /**
@@ -298,7 +298,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-},{}],48:[function(require,module,exports) {
+},{}],47:[function(require,module,exports) {
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
  *
@@ -361,7 +361,7 @@ if (undefined !== 'production') {
 }
 
 module.exports = warning;
-},{"./emptyFunction":49}],58:[function(require,module,exports) {
+},{"./emptyFunction":48}],58:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -375,7 +375,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
 
-},{}],50:[function(require,module,exports) {
+},{}],49:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -435,7 +435,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 }
 
 module.exports = checkPropTypes;
-},{"fbjs/lib/invariant":46,"fbjs/lib/warning":48,"./lib/ReactPropTypesSecret":58}],6:[function(require,module,exports) {
+},{"fbjs/lib/invariant":45,"fbjs/lib/warning":47,"./lib/ReactPropTypesSecret":58}],6:[function(require,module,exports) {
 /** @license React v16.4.0
  * react.development.js
  *
@@ -1904,7 +1904,7 @@ if (undefined !== "production") {
     module.exports = react;
   })();
 }
-},{"object-assign":45,"fbjs/lib/invariant":46,"fbjs/lib/emptyObject":47,"fbjs/lib/warning":48,"fbjs/lib/emptyFunction":49,"prop-types/checkPropTypes":50}],4:[function(require,module,exports) {
+},{"object-assign":44,"fbjs/lib/invariant":45,"fbjs/lib/emptyObject":46,"fbjs/lib/warning":47,"fbjs/lib/emptyFunction":48,"prop-types/checkPropTypes":49}],4:[function(require,module,exports) {
 'use strict';
 
 if (undefined === 'production') {
@@ -19551,7 +19551,7 @@ if (undefined !== "production") {
     module.exports = reactDom;
   })();
 }
-},{"fbjs/lib/invariant":46,"react":4,"fbjs/lib/warning":48,"fbjs/lib/ExecutionEnvironment":64,"object-assign":45,"fbjs/lib/emptyFunction":49,"prop-types/checkPropTypes":50,"fbjs/lib/getActiveElement":65,"fbjs/lib/shallowEqual":66,"fbjs/lib/containsNode":67,"fbjs/lib/emptyObject":47,"fbjs/lib/hyphenateStyleName":68,"fbjs/lib/camelizeStyleName":69}],5:[function(require,module,exports) {
+},{"fbjs/lib/invariant":45,"react":4,"fbjs/lib/warning":47,"fbjs/lib/ExecutionEnvironment":64,"object-assign":44,"fbjs/lib/emptyFunction":48,"prop-types/checkPropTypes":49,"fbjs/lib/getActiveElement":65,"fbjs/lib/shallowEqual":66,"fbjs/lib/containsNode":67,"fbjs/lib/emptyObject":46,"fbjs/lib/hyphenateStyleName":68,"fbjs/lib/camelizeStyleName":69}],5:[function(require,module,exports) {
 'use strict';
 
 function checkDCE() {
@@ -21014,7 +21014,7 @@ Emitter.prototype.hasListeners = function(event){
   return !! this.listeners(event).length;
 };
 
-},{}],24:[function(require,module,exports) {
+},{}],25:[function(require,module,exports) {
 var toString = {}.toString;
 
 module.exports = Array.isArray || function (arr) {
@@ -21192,7 +21192,7 @@ exports.removeBlobs = function(data, callback) {
   }
 };
 
-},{"isarray":24,"./is-buffer":17}],13:[function(require,module,exports) {
+},{"isarray":25,"./is-buffer":17}],13:[function(require,module,exports) {
 
 /**
  * Module dependencies.
@@ -21611,7 +21611,7 @@ function error(msg) {
   };
 }
 
-},{"debug":23,"component-emitter":18,"./binary":16,"isarray":24,"./is-buffer":17}],59:[function(require,module,exports) {
+},{"debug":23,"component-emitter":18,"./binary":16,"isarray":25,"./is-buffer":17}],59:[function(require,module,exports) {
 
 /**
  * Module exports.
@@ -21630,7 +21630,7 @@ try {
   module.exports = false;
 }
 
-},{}],44:[function(require,module,exports) {
+},{}],50:[function(require,module,exports) {
 var global = arguments[3];
 // browser shim for xmlhttprequest module
 
@@ -23730,7 +23730,7 @@ function isnan (val) {
   return val !== val // eslint-disable-line no-self-compare
 }
 
-},{"base64-js":55,"ieee754":56,"isarray":54,"buffer":31}],21:[function(require,module,exports) {
+},{"base64-js":55,"ieee754":56,"isarray":54,"buffer":31}],22:[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 /* global Blob File */
 
@@ -23797,7 +23797,7 @@ function hasBinary (obj) {
   return false;
 }
 
-},{"isarray":24,"buffer":31}],40:[function(require,module,exports) {
+},{"isarray":25,"buffer":31}],40:[function(require,module,exports) {
 /**
  * An abstraction for slicing an arraybuffer even when
  * ArrayBuffer.prototype.slice is not supported
@@ -24900,7 +24900,7 @@ exports.decodePayloadAsBinary = function (data, binaryType, callback) {
   });
 };
 
-},{"./keys":37,"has-binary2":21,"arraybuffer.slice":40,"after":41,"./utf8":38,"base64-arraybuffer":42,"blob":43}],35:[function(require,module,exports) {
+},{"./keys":37,"has-binary2":22,"arraybuffer.slice":40,"after":41,"./utf8":38,"base64-arraybuffer":42,"blob":43}],35:[function(require,module,exports) {
 /**
  * Module dependencies.
  */
@@ -25059,7 +25059,7 @@ Transport.prototype.onClose = function () {
   this.emit('close');
 };
 
-},{"engine.io-parser":32,"component-emitter":18}],22:[function(require,module,exports) {
+},{"engine.io-parser":32,"component-emitter":18}],21:[function(require,module,exports) {
 /**
  * Compiles a querystring
  * Returns string representation of the object
@@ -25824,7 +25824,7 @@ Polling.prototype.uri = function () {
   return schema + '://' + (ipv6 ? '[' + this.hostname + ']' : this.hostname) + port + this.path + query;
 };
 
-},{"../transport":35,"parseqs":22,"engine.io-parser":32,"component-inherit":62,"yeast":63,"debug":39,"xmlhttprequest-ssl":44}],51:[function(require,module,exports) {
+},{"../transport":35,"parseqs":21,"engine.io-parser":32,"component-inherit":62,"yeast":63,"debug":39,"xmlhttprequest-ssl":50}],51:[function(require,module,exports) {
 var global = arguments[3];
 /**
  * Module requirements.
@@ -26239,7 +26239,7 @@ function unloadHandler () {
   }
 }
 
-},{"xmlhttprequest-ssl":44,"./polling":60,"component-emitter":18,"component-inherit":62,"debug":39}],52:[function(require,module,exports) {
+},{"xmlhttprequest-ssl":50,"./polling":60,"component-emitter":18,"component-inherit":62,"debug":39}],52:[function(require,module,exports) {
 var global = arguments[3];
 
 /**
@@ -26764,7 +26764,7 @@ WS.prototype.check = function () {
   return !!WebSocket && !('__initialize' in WebSocket && this.name === WS.prototype.name);
 };
 
-},{"../transport":35,"engine.io-parser":32,"parseqs":22,"component-inherit":62,"yeast":63,"debug":39,"ws":61}],36:[function(require,module,exports) {
+},{"../transport":35,"engine.io-parser":32,"parseqs":21,"component-inherit":62,"yeast":63,"debug":39,"ws":61}],36:[function(require,module,exports) {
 var global = arguments[3];
 /**
  * Module dependencies
@@ -26820,7 +26820,7 @@ function polling (opts) {
   }
 }
 
-},{"xmlhttprequest-ssl":44,"./polling-xhr":51,"./polling-jsonp":52,"./websocket":53}],27:[function(require,module,exports) {
+},{"xmlhttprequest-ssl":50,"./polling-xhr":51,"./polling-jsonp":52,"./websocket":53}],27:[function(require,module,exports) {
 
 var indexOf = [].indexOf;
 
@@ -27577,7 +27577,7 @@ Socket.prototype.filterUpgrades = function (upgrades) {
   return filteredUpgrades;
 };
 
-},{"./transports/index":36,"component-emitter":18,"debug":39,"indexof":27,"engine.io-parser":32,"parseuri":14,"parseqs":22,"./transport":35}],25:[function(require,module,exports) {
+},{"./transports/index":36,"component-emitter":18,"debug":39,"indexof":27,"engine.io-parser":32,"parseuri":14,"parseqs":21,"./transport":35}],24:[function(require,module,exports) {
 
 module.exports = require('./socket');
 
@@ -28095,7 +28095,7 @@ Socket.prototype.binary = function (binary) {
   return this;
 };
 
-},{"socket.io-parser":13,"component-emitter":18,"to-array":19,"./on":15,"component-bind":20,"debug":12,"parseqs":22,"has-binary2":21}],28:[function(require,module,exports) {
+},{"socket.io-parser":13,"component-emitter":18,"to-array":19,"./on":15,"component-bind":20,"debug":12,"parseqs":21,"has-binary2":22}],28:[function(require,module,exports) {
 
 /**
  * Expose `Backoff`.
@@ -28757,7 +28757,7 @@ Manager.prototype.onreconnect = function () {
   this.emitAll('reconnect', attempt);
 };
 
-},{"engine.io-client":25,"./socket":11,"component-emitter":18,"socket.io-parser":13,"./on":15,"component-bind":20,"debug":12,"indexof":27,"backo2":28}],8:[function(require,module,exports) {
+},{"engine.io-client":24,"./socket":11,"component-emitter":18,"socket.io-parser":13,"./on":15,"component-bind":20,"debug":12,"indexof":27,"backo2":28}],8:[function(require,module,exports) {
 
 /**
  * Module dependencies.
@@ -28900,21 +28900,23 @@ var ClientSide = function (_React$Component) {
         return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ClientSide.__proto__ || Object.getPrototypeOf(ClientSide)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
             totalMessages: []
         }, _this.sendMessage = function (e) {
-            e.preventDefault();
-            console.log('in sendMessage');
-            socket.emit('send-message', e.target.value);
+            e.preventDefault();;
+            console.log('Message: ', e.target.msg.value);
+            if (e.target.msg.value) {
+                socket.emit('send-message', e.target.msg.value);
+            }
+            e.target.reset();
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     _createClass(ClientSide, [{
-        key: 'componentDidUpdate',
-        value: function componentDidUpdate() {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
             var _this2 = this;
 
-            console.log('Message id: ', socket.id);
             socket.on('totalMessages', function (data) {
+                console.log('Client got messages');
                 _this2.setState({ totalMessages: data.totalMessages });
-                console.log('State: ', _this2.state);
             });
         }
     }, {
@@ -28925,16 +28927,16 @@ var ClientSide = function (_React$Component) {
                 null,
                 _react2.default.createElement(
                     'form',
-                    { type: 'submit' },
+                    { onSubmit: this.sendMessage },
                     _react2.default.createElement(
                         'h4',
                         null,
                         'Write a message and chat away!'
                     ),
-                    _react2.default.createElement('input', { type: 'text', placeholder: 'Message...' }),
+                    _react2.default.createElement('input', { type: 'text', name: 'msg', placeholder: 'Message...' }),
                     _react2.default.createElement(
                         'button',
-                        { onClick: this.sendMessage, type: 'submit' },
+                        { type: 'submit' },
                         'SEND'
                     )
                 ),
@@ -28945,6 +28947,17 @@ var ClientSide = function (_React$Component) {
                         'h3',
                         null,
                         'Messages'
+                    ),
+                    _react2.default.createElement(
+                        'ul',
+                        null,
+                        this.state.totalMessages.map(function (msg, index) {
+                            return _react2.default.createElement(
+                                'li',
+                                { key: index },
+                                msg
+                            );
+                        })
                     )
                 )
             );
@@ -29046,7 +29059,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '58512' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '50529' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

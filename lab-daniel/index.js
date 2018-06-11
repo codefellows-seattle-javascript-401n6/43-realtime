@@ -7,12 +7,13 @@ let messages = [];
 
 io.on('connection', function(socket){
     console.log('A user has been connected!');
-    io.emit('totalMessages', {messages})
+    io.emit('totalMessages', {totalMessages: messages})
 
 
-    socket.on('send-message', () => {
-        console.log('Message recieved!');
-        io.emit('totalMessages', {messages})
+    socket.on('send-message', (msg) => {
+        console.log('Message recieved!', msg);
+        messages.push(msg)
+        io.emit('totalMessages', {totalMessages: messages})
     })
 })
 
