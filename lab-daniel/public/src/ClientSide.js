@@ -1,30 +1,51 @@
-import React   from 'react';
+import React from 'react';
 
 
-export default class ClientSide extends React.Component {
+class ClientSide extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
             username: '',
             message: '',
-            messages: []
-        };
-    }
-    
+            totalMessages: []
+        }
+        this.handleName = this.handleName.bind(this);
+        this.handleMessage = this.handleMessage.bind(this);
 
+    }
+
+    handleName(ev){
+        ev.preventDefault();
+        let setUsername = ev.target.value;
+        this.setState({username: setUsername});
+        console.log(setUsername);
+    }
+
+    handleMessage(ev){
+        ev.preventDefault();
+        let setMessage = ev.target.value;
+        this.setState({message: setMessage});
+        console.log(setMessage);
+    }
+
+    handleSubmit(ev){
+        ev.preventDefault();
+
+    }
     render() {
         return <React.Fragment>
-            <form className="inputForm">
+            <form type="submit">
                 <h4>Pick a username and chat away!</h4>
-                <input type="text" placeholder="Username"></input>
-                <input type="text" placeholder="Message..." ></input>
-                <button onClick={this.sendMessage} type="submit">SEND</button>
+                <input onChange={this.handleName} type="text" placeholder="Username"></input>
+                <input onChange={this.handleMessage} type="text" placeholder="Message..."></input>
+                <button onClick={this.handleSubmit} type="submit">SEND</button>
             </form>
 
             <div className="messages">
-                <h3>Messages</h3> 
+                <h3>Messages</h3>
             </div>
         </React.Fragment>
     }
 }
+
+export default ClientSide
