@@ -26,6 +26,6 @@ const Bundler = require('parcel-bundler');
 let bundler = new Bundler('./public/index.html');
 app.use(bundler.middleware());
 
-http.listen(3000, function(){
+http.listen(process.env.PORT, function(){
   console.log('listening on *:3000');
 });
